@@ -30,50 +30,63 @@ resources = {
     "coffee": 100,
 }
 
-profit = 0
 is_on = True
+profit = 0
 
 
-def check_resource(drink): ...
-def get_coins(): ...
+def is_resources_enough(drink):
+    """Return True when order can be supplied, False when resources are insufficient"""
+    for item in drink:
+        if drink[item] >= resources[item]:
+            print(f"Sorry there is not enough {item}")
+            return False
+    return True
 
 
-# TODO 1 : ask espresso/latter/cappuccino
-while is_on:
-    ans = input("What would you like? (espresso/latte/cappuccino):")
-# TODO 2 : turn off machine
-    if ans.lower() == "off":
-        is_on = False
-# TODO 3 : print report
-    elif ans.lower() == "report":
-        print(f"Water: {resources['water']}ml")
-        print(f"Milk: {resources['milk']}ml")
-        print(f"Coffee: {resources['coffee']}ml")
-        print(f"Money: ${profit}")
-    check_resource(ans)
-    get_coins()
-
-
-# TODO 4 : check resources sufficient
-def check_resource(drink):
-    if resources['water'] < MENU[drink]['ingredients']['water']:
-        print("Sorry there is not enough water.")
-    if resources['milk'] < MENU[drink]['ingredients']['milk']:
-        print("Sorry there is not enough milk.")
-    if resources['water'] < MENU[drink]['ingredients']['coffee']:
-        print("Sorry there is not enough coffee.")
-
-
-# TODO 5 : process coins
 def get_coins():
+    """Returns total calculated from inserted coins"""
+    print("Please insert coins")
     quarters = int(input("Quarters: "))
     dimes = int(input("Dimes: "))
     nickles = int(input("Nickles: "))
     pennies = int(input("Pennies: "))
+    return quarters * 0.25 + dimes * 0.1 + nickles * 0.05 + pennies * 0.01
 
-# TODO 6 : check transaction successful
 
-# TODO 7 : make coffee
+def is_transaction_successful(payment_recv, drink_cost):
+    """Return True when received payment is enough, False if it insufficient"""
+    global profit
+    if payment_recv >= drink_cost:
+        change = round(payment_recv - drink_cost, 2)
+        print(f"Here is ${change} change!")
+        profit += drink_cost
+        return True
+    print("Sorry that's not enough money. Money refunded.")
+    return False
+
+
+def make_drink(drink):
+    """Return updated resources after drink is made"""
+    for item in drink:
+        resources[item] -= drink[item]
+    return resources
+
+
+if __name__ == '__main__':
+    while is_on:
+        answer = input("What would you like? (espresso/latte/cappuccino): ")
+        if answer.lower() == 'off':
+            is_on = False
+            break
+        elif answer.lower() == 'report':
+            print(f"Water: {resources['water']}ml\nMilk: {resources['milk']}\nCoffee: {resources['coffee']}ml")
+            print(f"Money: ${profit}")
+        else:
+            if is_resources_enough(MENU[answer]['ingredients']):
+                payment = get_coins()
+                if is_transaction_successful(payment, MENU[answer]['cost']):
+                    resources = make_drink(MENU[answer]['ingredients'])
+                    print(f"Here is your {answer} ☕")
 
 
 
