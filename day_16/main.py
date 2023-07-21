@@ -1,16 +1,22 @@
-# This is a sample Python script.
+# from turtle import Turtle, Screen
+#
+# timmy = Turtle()  # new object called timmy
+# timmy.shape("turtle")  # change the shape to turtle
+# timmy.color("medium purple")  # change color to medium purple
+# timmy.forward(100)  # move forward by 100
+#
+#
+# window = Screen()  # create new screen object
+# window.title("Timmy the Turtle")  # set title to screen
+# print(window.canvwidth)  # print screen height
+# print(window.canvheight)  # print screen width
+# window.exitonclick()  # widow exits only when clicked
 
-# Press Ctrl+F5 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from prettytable import PrettyTable
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press F9 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+table = PrettyTable()
+table.add_column("Pokemon Name", ["Pikachu", "Squitle", "Charmander"])
+table.add_column("Type", ["Electric", "Water", "Fire"])
+table.align = "l"
+print(table.align)
+print(table)
