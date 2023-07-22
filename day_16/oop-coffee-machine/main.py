@@ -8,17 +8,16 @@ machine = CoffeeMaker()
 money = MoneyMachine()
 
 while is_on:
-    answer = input(f"What would you like? ({menu.get_items()}): ")
+    choices = menu.get_items()
+    answer = input(f"What would you like? ({choices}): ")
     if answer == "off":
         is_on = False
-        break
     elif answer == "report":
         machine.report()
         money.report()
     else:
-        if menu.find_drink(answer):
-            drink = menu.find_drink(answer)
-            print(drink)
-        else:
-            pass
-
+        drink = menu.find_drink(answer)
+        if drink:
+            if machine.is_resource_sufficient(drink):
+                if money.make_payment(drink.cost):
+                    machine.make_coffee(drink)
