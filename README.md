@@ -14,3 +14,4 @@
 - [ ] Day 13
 - [ ] Day 14
 - [x] Day 15 (Coffee Machine)
+- [x] Day 16 (oop-coffee-machine)
