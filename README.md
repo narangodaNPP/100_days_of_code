@@ -1,6 +1,6 @@
 # 100_days_of_code
-- [ ] Day 01
-- [ ] Day 02
+- [x] Day 01 (Band Name Generator)
+- [x] Day 02 (Tip Calculator)
 - [ ] Day 03
 - [ ] Day 04
 - [ ] Day 05
