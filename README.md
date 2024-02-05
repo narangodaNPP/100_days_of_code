@@ -2,7 +2,7 @@
 - [x] Day 01 (Band Name Generator)
 - [x] Day 02 (Tip Calculator)
 - [x] Day 03 (Treasure Island)
-- [x] Day 04
+- [x] Day 04 (rock-paper-scissors)
 - [ ] Day 05
 - [ ] Day 06
 - [ ] Day 07
