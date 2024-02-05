@@ -1,8 +1,8 @@
 # 100_days_of_code
 - [x] Day 01 (Band Name Generator)
 - [x] Day 02 (Tip Calculator)
-- [ ] Day 03
-- [ ] Day 04
+- [x] Day 03 (Treasure Island)
+- [x] Day 04
 - [ ] Day 05
 - [ ] Day 06
 - [ ] Day 07
@@ -13,5 +13,5 @@
 - [ ] Day 12
 - [ ] Day 13
 - [ ] Day 14
-- [x] Day 15 (Coffee Machine)
-- [x] Day 16 (oop-coffee-machine)
+- [ ] Day 15
+- [ ] Day 16
