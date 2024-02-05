@@ -1,7 +1,7 @@
 # 100_days_of_code
 - [x] Day 01 (Band Name Generator)
 - [x] Day 02 (Tip Calculator)
-- [x] Day 03 
+- [x] Day 03 (Treasure Island)
 - [x] Day 04
 - [ ] Day 05
 - [ ] Day 06
