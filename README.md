@@ -3,7 +3,7 @@
 - [x] Day 02 (Tip Calculator)
 - [x] Day 03 (Treasure Island)
 - [x] Day 04 (rock-paper-scissors)
-- [ ] Day 05
+- [x] Day 05
 - [ ] Day 06
 - [ ] Day 07
 - [ ] Day 08
